@@ -1,6 +1,6 @@
-# BOOLEAN_FUNCTION_MINIMIZATION
+##  BOOLEAN_FUNCTION_MINIMIZATION
 
-**AIM:**
+## **AIM:**
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
 
@@ -8,17 +8,17 @@ F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
 
 F2=xy’z+x’y’z+w’xy+wx’y+wxy
 
-**Equipment Required:**
+## **Equipment Required:**
 
 Hardware – PCs, Cyclone II , USB flasher
 
-**Software – Quartus prime**
+## **Software – Quartus prime**
 
-**Theory**
+## **Theory**
 
-**Logic Diagram**
+## **Logic Diagram**
 
-**Procedure**
+## **Procedure**
 
 1.	Type the program in Quartus software.
 
@@ -31,22 +31,42 @@ Hardware – PCs, Cyclone II , USB flasher
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**
+## **Program:**
 
 /* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+```
+Developed by: HENRIPRASATH S
+RegisterNumber: 212223230077
 
-Developed by: RegisterNumber:*/
+module EXP_2(A,B,C,D,W,X,Y,Z,F1,F2);
+input A,B,C,D,W,X,Y,Z;
+wire x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
+output F1,F2;
+assign x1=(~A)&(~B)&(~C)&(~D);
+assign x2=(A)&(~C)&(~D);
+assign x3=(~B)&(C)&(~D);
+assign x4=(~A)&(B)&(C)&(D);
+assign x5=(B)&(~C)&(D);
+assign x6=(X)&(~Y)&(Z);
+assign x7=(~X)&(~Y)&(Z);
+assign x8=(~W)&(X)&(Y);
+assign x9=(W)&(~X)&(Y);
+assign x10=(W)&(X)&(Y);
+assign F1=x1|x2|x3|x4|x5;
+assign F2=x6|x7|x8|x9|x10;
+endmodule
+```
+
+## **RTL realization**
+
+![RTL](https://github.com/user-attachments/assets/07f0d337-8a54-4482-9b54-f4efacd2af92)
 
 
-**RTL realization**
+## **Output:**
+![output](https://github.com/user-attachments/assets/f6d83f87-5357-440a-9324-ac637a36d5bf)
 
-**Output:**
 
-**RTL**
-
-**Timing Diagram**
-
-**Result:**
+## **Result:**
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
